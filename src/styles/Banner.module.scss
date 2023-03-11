@@ -1,12 +1,19 @@
+$videoWidth: 100vw ;
+$videoHeight: 100vh ;
+@media (min-aspect-ratio: 16/9) {
+    $videoHeight : 58.25vw;
+  
+}
+@media (max-aspect-ratio: 16/9) {
+    $videoWidth: 177.78vh;
+    
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 70vh;
-    padding: 4%;
-    gap: 30px;
+    height: 30vh;
     width: 100vw;
-    position: relative;
+     position: relative;
+    overflow: hidden;
     .overlay {
         background-color: black;
         opacity: 0.1;
@@ -31,11 +38,38 @@
         
     }
     .content {
+        position: absolute;
+        top: 50%;
+        left: 2%;
         z-index: 2;
-        h1,h2 {
+        h1{
             z-index: 2;
         }
+        p {
+            width: 400px;
+        }
     } 
+    .iframe{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $videoWidth;
+        height: $videoWidth;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+       
+    }
     
     
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        height:40vh;
+    }
+}
+@media screen and (min-width:  900px) {
+    .container {
+        height:70vh;
+    }
 }
