@@ -39,14 +39,17 @@ $videoHeight: 100vh ;
     }
     .content {
         position: absolute;
-        top: 50%;
-        left: 2%;
+        bottom: 20%;
+        left: 4%;
         z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         h1{
             z-index: 2;
         }
         p {
-            width: 400px;
+            width: 500px;
         }
     } 
     .iframe{
@@ -59,10 +62,38 @@ $videoHeight: 100vh ;
         z-index: -1;
        
     }
+    .buttons {
+        display: flex;
+        gap: 30px;
+        button {
+            display: inline-flex;
+            align-items: center;
+            color: black;
+            background-color: #e4e4e4;
+            padding: 15px;
+            width: 160px;
+            justify-content: center;
+            border: none;
+            font-size: 20px;
+            border-radius: 5px;
+            box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;;
+        }
+        .moreinfo {
+            background-color: #ffffff46;
+            color: #fff;
+        }
+        button:hover {
+            background-color: #fff;
+        }
+        .moreinfo:hover {
+            background-color: #ffffff1a;
+        }
+       
+    }
     
     
+   
 }
-
 @media screen and (min-width: 700px) {
     .container {
         height:40vh;
@@ -70,6 +101,6 @@ $videoHeight: 100vh ;
 }
 @media screen and (min-width:  900px) {
     .container {
-        height:70vh;
+        height:80vh;
     }
 }

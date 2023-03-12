@@ -2,9 +2,10 @@ import style from '@/styles/Banner.module.scss';
 import { useEffect, useState } from 'react';
 import axios from '@/models/axios';
 import requests from '@/models/request';
-import {BsFillPlayFill} from 'react-icons/bs'
+import {BiPlay} from 'react-icons/bi'
 import {AiOutlineInfoCircle} from 'react-icons/ai'
 import YouTube from 'react-youtube';
+import { IconContext } from "react-icons";
 
 const Banner = () => {
 //Variables
@@ -20,9 +21,9 @@ const Banner = () => {
           controls: 0,
           rel: 0,
           loop:1,
+          playlist: trailer,
           showinfo: 0,
           mute: 1,
-          
           
         }
       };
@@ -71,8 +72,12 @@ const Banner = () => {
             <div className={style.content}>
                 <h1>{movie?.title}</h1>
                 <p>{truncate(movie?.overview, 200)}</p>
-                <button><BsFillPlayFill/>Play</button>
-                <button><AiOutlineInfoCircle/> More Info</button>
+                 
+                    <div className={style.buttons}>
+                        <button className={style.playbutton}><BiPlay  style={{fill: 'black'}} size={30}/>Play</button>
+                        <button className={style.moreinfo}><AiOutlineInfoCircle style={{fill: 'white'}} size={30}/> More Info</button>
+                    </div>
+                
             </div>
             <div className={style.BannerFade}></div>
         </div>
