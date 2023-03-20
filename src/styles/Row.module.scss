@@ -1,0 +1,15 @@
+.row {
+    padding: 10px;
+    
+    .poster {
+        
+        transition: transform 450ms;
+        width: auto;
+        
+    }
+    .poster:hover {
+        transform: scale(1.1);
+    }
+    
+    
+}
